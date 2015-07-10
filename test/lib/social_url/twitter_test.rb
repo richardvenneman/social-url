@@ -13,13 +13,13 @@ module SocialUrl
     end
 
     def test_url
+      opts = SocialUrl.normalize(@options)
       url = ['https://twitter.com/intent/tweet/?text=Hello%20World',
              '&url=http%3A%2F%2Fexample.com',
              '&hashtags=nature,sunset',
              '&via=twitterdev',
              '&related=twitter%3ATwitter%20News,twitterapi%3ATwitter%20API%20News'].join
 
-      opts = SocialUrl.normalize(@options)
       assert_equal url, Twitter.new(opts).url
     end
   end

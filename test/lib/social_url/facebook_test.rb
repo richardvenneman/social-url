@@ -7,9 +7,9 @@ module SocialUrl
     end
 
     def test_url
+      opts = SocialUrl.normalize(@options)
       url = 'https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fexample.com'
 
-      opts = SocialUrl.normalize(@options)
       assert_equal url, Facebook.new(opts).url
     end
   end
