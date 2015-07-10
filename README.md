@@ -1,9 +1,10 @@
 # social-url
 
 A simple gem to generate social media sharing links.
-Supports multiple platforms with a plugin architecture.
 
 [![Gem Version](https://badge.fury.io/rb/social-url.svg)](http://badge.fury.io/rb/social-url) [![Code Climate](https://codeclimate.com/github/richardvenneman/social-url/badges/gpa.svg)](https://codeclimate.com/github/richardvenneman/social-url) [![Dependency Status](https://gemnasium.com/richardvenneman/social-url.svg)](https://gemnasium.com/richardvenneman/social-url) [![Test Coverage](https://codeclimate.com/github/richardvenneman/social-url/badges/coverage.svg)](https://codeclimate.com/github/richardvenneman/social-url/coverage) [![Build Status](http://img.shields.io/travis/richardvenneman/social-url.svg)](https://travis-ci.org/richardvenneman/social-url)
+
+Supported networks: Google+, Facebook, Pinterest, Twitter.
 
 ## Introduction
 
@@ -49,19 +50,13 @@ message.facebook_url #=> 'https://www.facebook.com/sharer/sharer.php?u=http%3A%2
 ...
 ```
 
-### Available networks
-
-- Google+
-- Facebook
-- Pinterest
-- Twitter
-
 ## TODO
 
 This gem is a work-in-progress. Planned features:
 
 - Raise on missing required network parameters
 - Ruby on Rails ActionView helpers
+- Add missing networks
 
 ## Contributing
 
