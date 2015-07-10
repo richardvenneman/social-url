@@ -1,15 +1,13 @@
 module SocialUrl
   class Twitter
+    PARAMS = [:text, :url, :hashtags, :via, :related]
+
     def initialize(options)
-      @options = options
+      @params = SocialUrl.filtered_params(options, PARAMS)
     end
 
     def url
-      params = @options.collect do |key, value|
-        "#{key}=#{value}"
-      end.join('&')
-
-      "https://twitter.com/intent/tweet/?#{params}"
+      "https://twitter.com/intent/tweet/?#{@params}"
     end
   end
 end

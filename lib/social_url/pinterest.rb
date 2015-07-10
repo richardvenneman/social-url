@@ -1,15 +1,13 @@
 module SocialUrl
   class Pinterest
+    PARAMS = [:url, :media, :description]
+
     def initialize(options)
-      @options = options
+      @params = SocialUrl.filtered_params(options, PARAMS)
     end
 
     def url
-      params = @options.collect do |key, value|
-        "#{key}=#{value}"
-      end.join('&')
-
-      "https://www.pinterest.com/pin/create/button/?#{params}"
+      "https://www.pinterest.com/pin/create/button/?#{@params}"
     end
   end
 end

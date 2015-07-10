@@ -1,13 +1,13 @@
 module SocialUrl
   class Google
+    PARAMS = [:url]
+
     def initialize(options)
-      @options = options
+      @params = SocialUrl.filtered_params(options, PARAMS)
     end
 
     def url
-      params = "url=#{@options[:url]}"
-
-      "https://plus.google.com/share?#{params}"
+      "https://plus.google.com/share?#{@params}"
     end
   end
 end

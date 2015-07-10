@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    social-url (0.3.0)
+    social-url (1.0.0)
 
 GEM
   remote: https://rubygems.org/

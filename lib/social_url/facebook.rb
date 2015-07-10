@@ -1,13 +1,13 @@
 module SocialUrl
   class Facebook
+    PARAMS = [:u]
+
     def initialize(options)
-      @options = options
+      @params = SocialUrl.filtered_params(options, PARAMS)
     end
 
     def url
-      params = "u=#{@options[:url]}"
-
-      "https://www.facebook.com/sharer/sharer.php?#{params}"
+      "https://www.facebook.com/sharer/sharer.php?#{@params}"
     end
   end
 end

@@ -1,5 +1,8 @@
 require 'erb'
+
+require 'social_url/errors'
 require 'social_url/version'
+
 require 'social_url/message'
 require 'social_url/facebook'
 require 'social_url/google'
@@ -11,6 +14,12 @@ module SocialUrl
 
   class << self
     NETWORKS = [:facebook, :google, :pinterest, :twitter]
+    KEYS = {
+      u: :url,
+      url: :u,
+      description: :text,
+      text: :description
+    }
 
     def networks
       NETWORKS
@@ -26,6 +35,16 @@ module SocialUrl
         opts[key] = normalize_array(value) if value.is_a?(Array)
       end
 
+      normalize_keys(opts)
+    end
+
+    def normalize_keys(options)
+      opts = options.dup
+
+      options.each do |key, value|
+        opts[KEYS[key]] = opts[key] if KEYS[key]
+      end
+
       opts
     end
 
@@ -38,7 +57,11 @@ module SocialUrl
         ERB::Util.url_encode(value)
       end.join(',')
     end
-  end
 
-  class UnsupportedNetworkError < StandardError; end
+    def filtered_params(options, params)
+      params.collect do |param|
+        "#{param}=#{options[param]}"
+      end.join('&')
+    end
+  end
 end

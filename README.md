@@ -61,7 +61,6 @@ message.facebook_url #=> 'https://www.facebook.com/sharer/sharer.php?u=http%3A%2
 This gem is a work-in-progress. Planned features:
 
 - Raise on missing required network parameters
-- Merge keys for networks (e.g. url, u)
 - Ruby on Rails ActionView helpers
 
 ## Contributing
