@@ -9,7 +9,7 @@ Supports multiple platforms with a plugin architecture.
 
 This gem was created to help quickly set up sharing links for web pages. This should help you create simple and fast sharing links to social media networks as opposed to performance-heavy third-party sharing widgets.
 
-Read more about (https://jonsuh.com/blog/social-share-links/)[Responsible Social Share Links].
+Read more about [Responsible Social Share Links](https://jonsuh.com/blog/social-share-links) (by [@jonsuh](https://github.com/jonsuh)).
 
 ## Installation
 
