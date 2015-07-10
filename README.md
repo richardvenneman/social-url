@@ -45,6 +45,7 @@ message.twitter_url #=> 'https://twitter.com/intent/tweet/?text=Hello%20World&ur
 
 ### Available networks
 
+- Facebook
 - Twitter
 
 ## TODO

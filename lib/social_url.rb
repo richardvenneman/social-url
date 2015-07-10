@@ -1,6 +1,7 @@
 require 'erb'
 require 'social_url/version'
 require 'social_url/message'
+require 'social_url/facebook'
 require 'social_url/twitter'
 
 module SocialUrl
