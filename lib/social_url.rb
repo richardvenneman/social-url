@@ -3,13 +3,14 @@ require 'social_url/version'
 require 'social_url/message'
 require 'social_url/facebook'
 require 'social_url/google'
+require 'social_url/pinterest'
 require 'social_url/twitter'
 
 module SocialUrl
   include ERB::Util
 
   class << self
-    NETWORKS = [:facebook, :google, :twitter]
+    NETWORKS = [:facebook, :google, :pinterest, :twitter]
 
     def networks
       NETWORKS
