@@ -42,7 +42,10 @@ message = SocialUrl::Message.new({
   hashtags: %w(nature sunset)
 })
 
+# Use the network methods to easily get sharing URLs
+
 message.twitter_url #=> 'https://twitter.com/intent/tweet/?text=Hello%20World&url=http%3A%2F%2Fexample.com&hashtags=nature,sunset'
+message.facebook_url #=> 'https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fexample.com'
 ```
 
 ### Available networks
