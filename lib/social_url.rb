@@ -9,7 +9,7 @@ module SocialUrl
   include ERB::Util
 
   class << self
-    NETWORKS = [:twitter]
+    NETWORKS = [:facebook, :google, :twitter]
 
     def networks
       NETWORKS

@@ -26,7 +26,7 @@ Run the `bundle install` in your terminal command to install it.
 The gem exposes two classes `SocialUrl` and `SocialUrl::Message`. The `SocialUrl` class provides normalization functionality for URL parameters and exposes the available networks:
 
 ```ruby
-SocialUrl.networks #=> [:twitter]
+SocialUrl.networks #=> [:facebook, :google, :twitter, ...]
 
 SocialUrl.normalize_string('Hello World') #=> 'Hello%20World'
 SocialUrl.normalize_array(%w(nature sunset)) #=> 'nature,sunset'
@@ -46,10 +46,12 @@ message = SocialUrl::Message.new({
 
 message.twitter_url #=> 'https://twitter.com/intent/tweet/?text=Hello%20World&url=http%3A%2F%2Fexample.com&hashtags=nature,sunset'
 message.facebook_url #=> 'https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fexample.com'
+...
 ```
 
 ### Available networks
 
+- Google+
 - Facebook
 - Twitter
 
