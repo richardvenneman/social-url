@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.email       = 'richardvenneman@me.com'
   s.homepage    = 'https://github.com/richardvenneman/social-url'
   s.summary     = 'Generates social media sharing links'
-  s.description = 'A simple gem to generate social sharing links from your
+  s.description = 'A simple gem to generate social sharing links for your
                    messages. Supports multiple social platforms trough a plugin
                    architecture.'
 
