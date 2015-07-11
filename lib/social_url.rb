@@ -60,8 +60,9 @@ module SocialUrl
 
     def filtered_params(options, params)
       params.collect do |param|
+        next unless options[param]
         "#{param}=#{options[param]}"
-      end.join('&')
+      end.compact.join('&')
     end
   end
 end

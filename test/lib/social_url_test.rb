@@ -48,7 +48,7 @@ class SocialUrlTest < Minitest::Test
 
   def test_filtered_params
     filtered_params = 'text=Hello%20World&url=http%3A%2F%2Fexample.com%2F'
-    params = [:text, :url]
+    params = [:text, :url, :derp]
 
     assert_equal filtered_params, SocialUrl.filtered_params(@normalized_options, params)
   end
