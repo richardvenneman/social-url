@@ -58,12 +58,7 @@ This gem is a work-in-progress. Planned features:
 - Ruby on Rails ActionView helpers
 - Add missing networks
 
-## Contributing
 
-Everyone is encouraged to help improve this project. Here are a few ways you can help:
+## License
 
-- Report bugs
-- Fix bugs and submit pull requests
-- Write, clarify, or fix documentation
-- Suggest or add new features
-- Write missing tests
+This library is released under the [MIT License](http://www.opensource.org/licenses/MIT).
