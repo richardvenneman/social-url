@@ -2,7 +2,11 @@
 
 A simple gem to generate social media sharing URLs.
 
-[![Gem Version](https://badge.fury.io/rb/social-url.svg)](http://badge.fury.io/rb/social-url) [![Code Climate](https://codeclimate.com/github/richardvenneman/social-url/badges/gpa.svg)](https://codeclimate.com/github/richardvenneman/social-url) [![Dependency Status](https://gemnasium.com/richardvenneman/social-url.svg)](https://gemnasium.com/richardvenneman/social-url) [![Test Coverage](https://codeclimate.com/github/richardvenneman/social-url/badges/coverage.svg)](https://codeclimate.com/github/richardvenneman/social-url/coverage) [![Build Status](http://img.shields.io/travis/richardvenneman/social-url.svg)](https://travis-ci.org/richardvenneman/social-url)
+[![Gem](https://img.shields.io/gem/v/social-url.svg?style=flat-square)](http://rubygems.org/gems/social-url)
+[![Build Status](https://img.shields.io/travis/richardvenneman/social-url/master.svg?style=flat-square)](https://travis-ci.org/richardvenneman/social-url)
+[![Gemnasium](https://img.shields.io/gemnasium/richardvenneman/social-url.svg?style=flat-square)](https://gemnasium.com/richardvenneman/social-url)
+[![Code Climate](https://img.shields.io/codeclimate/github/richardvenneman/social-url.svg?style=flat-square)](https://codeclimate.com/github/richardvenneman/social-url)
+[![Test Coverage](https://img.shields.io/codeclimate/coverage/github/richardvenneman/social-url.svg?style=flat-square)](https://codeclimate.com/github/richardvenneman/social-url/coverage)
 
 Supported networks: Google+, Facebook, Pinterest, Twitter.
 
