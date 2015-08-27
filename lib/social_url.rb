@@ -31,8 +31,13 @@ module SocialUrl
       options.each do |key, value|
         next unless value
 
-        opts[key] = normalize_string(value) if value.is_a?(String)
-        opts[key] = normalize_array(value) if value.is_a?(Array)
+        if key == :hashtags
+          opts[key] = normalize_hashtags(value)
+        elsif value.is_a?(String)
+          opts[key] = normalize_string(value)
+        elsif value.is_a?(Array)
+          opts[key] = normalize_array(value)
+        end
       end
 
       normalize_keys(opts)
@@ -46,6 +51,12 @@ module SocialUrl
       end
 
       opts
+    end
+
+    def normalize_hashtags(array)
+      array.collect do |value|
+        value.delete(' ')
+      end.join(',')
     end
 
     def normalize_string(string)

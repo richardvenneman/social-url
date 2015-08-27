@@ -42,6 +42,13 @@ class SocialUrlTest < Minitest::Test
     assert_equal complex_text, SocialUrl.normalize_array(complex_array)
   end
 
+  def test_hashtag_normalization
+    array = ['Multi Word HashTag', 'nature']
+    text = 'MultiWordHashTag,nature'
+
+    assert_equal text, SocialUrl.normalize_hashtags(array)
+  end
+
   def test_normalization
     assert_equal @normalized_options, SocialUrl.normalize(@options)
   end
