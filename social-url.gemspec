@@ -17,8 +17,8 @@ Gem::Specification.new do |s|
   s.test_files   = Dir['test/**/*']
 
   s.add_development_dependency 'rake', '~> 10.4'
-  s.add_development_dependency 'guard', '~> 2'
+  s.add_development_dependency 'guard', '~> 2.13'
   s.add_development_dependency 'guard-minitest', '~> 2.4'
-  s.add_development_dependency 'simplecov', '~> 0.9'
+  s.add_development_dependency 'simplecov', '~> 0.11'
   s.add_development_dependency 'codeclimate-test-reporter', '~> 0.4'
 end
