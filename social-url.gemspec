@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.files        = `git ls-files`.split("\n")
   s.test_files   = Dir['test/**/*']
 
-  s.add_development_dependency 'rake', '~> 10.4'
+  s.add_development_dependency 'rake', '~> 10.5'
   s.add_development_dependency 'guard', '~> 2.13'
   s.add_development_dependency 'guard-minitest', '~> 2.4'
   s.add_development_dependency 'simplecov', '~> 0.11'
