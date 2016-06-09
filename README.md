@@ -20,7 +20,7 @@ Read more about [Responsible Social Share Links](https://jonsuh.com/blog/social-
 
 ## Installation
 
-This library works with the latest stable Rubies (2.3.0, 2.2.4, 2.1.8).
+This library is test with the following Rubies: 2.3.0, 2.2.4.
 
 Add it to your Gemfile with:
 
