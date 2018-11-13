@@ -20,7 +20,7 @@ Read more about [Responsible Social Share Links](https://jonsuh.com/blog/social-
 
 ## Installation
 
-This library is test with the following Rubies: 2.3.0, 2.2.4.
+This library is test with the following Rubies: 2.3.8, 2.4.5, 2.5.3.
 
 Add it to your Gemfile with:
 
