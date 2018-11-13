@@ -16,9 +16,8 @@ Gem::Specification.new do |s|
   s.files        = `git ls-files`.split("\n")
   s.test_files   = Dir['test/**/*']
 
-  s.add_development_dependency 'rake', '~> 11.1'
-  s.add_development_dependency 'guard', '~> 2.13'
+  s.add_development_dependency 'rake', '~> 12'
+  s.add_development_dependency 'guard', '~> 2.14'
   s.add_development_dependency 'guard-minitest', '~> 2.4'
-  s.add_development_dependency 'simplecov', '~> 0.11'
-  s.add_development_dependency 'codeclimate-test-reporter', '~> 0.4'
+  s.add_development_dependency 'simplecov', '~> 0.16'
 end
