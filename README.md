@@ -68,9 +68,8 @@ SocialUrl.normalize_array(['twitter:Twitter News', 'twitterapi:Twitter API News'
 
 I'm happy to accept any pull requests for new networks. Adding a new network is relatively easy. Say you'd want to add `mynetwork` support:
 
-1. Create `lib/social_url/mynetwork.rb` and `test/lib/social_url/mynetwork_test.rb`
+1. Create `lib/social_url/networks/mynetwork.rb` and `test/lib/social_url/networks/mynetwork_test.rb`
 2. Add tests and implementation (take a look at the current networks)
-3. In `lib/social_url.rb`, add a require statement and add `:mynetwork` to the `NETWORKS` constant
 
 ## License
 

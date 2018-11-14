@@ -22,7 +22,7 @@ module SocialUrl
         SocialUrl.networks.each do |network|
           self.class.send(:define_method, "#{network}_url") do
             klass = network.to_s.capitalize
-            SocialUrl.const_get(klass).new(@options).url
+            SocialUrl::Networks.const_get(klass).new(@options).url
           end
         end
       end
