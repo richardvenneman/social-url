@@ -1,4 +1,4 @@
-# social-url
+# ✨ social-url
 
 A simple gem to generate social media sharing URLs.
 
@@ -7,7 +7,7 @@ A simple gem to generate social media sharing URLs.
 [![Maintainability](https://api.codeclimate.com/v1/badges/18b840bd059f4e83442c/maintainability)](https://codeclimate.com/github/richardvenneman/social-url/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/18b840bd059f4e83442c/test_coverage)](https://codeclimate.com/github/richardvenneman/social-url/test_coverage)
 
-Supported networks: Google+, Facebook, Pinterest, Twitter.
+Supported networks: Google+, Facebook, Pinterest, Twitter and `mailto:`.
 
 ## Introduction
 
@@ -16,18 +16,6 @@ This gem was created to help you create social media sharing URLs. Create a mess
 Use this to create fast sharing links as opposed to performance-heavy third-party sharing widgets.
 
 Read more about [Responsible Social Share Links](https://jonsuh.com/blog/social-share-links) (by [@jonsuh](https://github.com/jonsuh)).
-
-## Installation
-
-This library is test with the following Rubies: 2.3.8, 2.4.5, 2.5.3.
-
-Add it to your Gemfile with:
-
-```ruby
-gem 'social_url'
-```
-
-Run the `bundle install` command in your terminal to install it.
 
 ## Usage
 
@@ -45,6 +33,7 @@ Use the message's network methods to get the sharing URLs:
 
 - `facebook_url`
 - `google_url`
+- `mailto_url`
 - `pinterest_url`
 - `twitter_url`
 
@@ -53,6 +42,20 @@ message.twitter_url #=> 'https://twitter.com/intent/tweet/?text=Hello%20World&ur
 message.facebook_url #=> 'https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fexample.com'
 ...
 ```
+
+### Parameters
+
+This gem translates the options passed to the `SocialUrl::Message` into the correct parameters for each network. Supported options are:
+
+| Network       | Supported parameters |
+| ------------- | -------------------- |
+| Facebook      | `url` (String) |
+| Google        | `url` (String) |
+| mailto        | `url` (String)<br>`text` (String) |
+| Pinterest     | `url` (String)<br>`text` (String)<br>`media` (String) |
+| Twitter        | `url` (String)<br>`text` (String)<br>`hashtags` (Array of Strings)<br>`via` (String)<br>`related` (Array of Strings) |
+
+### Utilities
 
 The `SocialUrl` class provides normalization functionality for URL parameters and exposes the available networks:
 
@@ -63,6 +66,24 @@ SocialUrl.normalize_string('Hello World') #=> 'Hello%20World'
 SocialUrl.normalize_array(%w(nature sunset)) #=> 'nature,sunset'
 SocialUrl.normalize_array(['twitter:Twitter News', 'twitterapi:Twitter API News']) #=> 'twitter%3ATwitter%20News,twitterapi%3ATwitter%20API%20News'
 ```
+
+## Installation
+
+This library is test with the following Rubies: 2.3.8, 2.4.5, 2.5.3.
+
+Add this line to your application's Gemfile:
+
+```ruby
+gem 'social-url'
+```
+
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install social-url
 
 ## Contributing
 
