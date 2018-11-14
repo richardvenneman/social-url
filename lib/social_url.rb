@@ -4,18 +4,18 @@ require "erb"
 
 require "social_url/errors"
 require "social_url/version"
-
 require "social_url/message"
-require "social_url/facebook"
-require "social_url/google"
-require "social_url/pinterest"
-require "social_url/twitter"
+
+NETWORKS = []
+Dir[File.join(__dir__, "social_url", "networks", "*.rb")].each do |file|
+  require file
+  NETWORKS << /.+\/(.+).rb$/.match(file)[1].to_sym
+end
 
 module SocialUrl
   include ERB::Util
 
   class << self
-    NETWORKS = [:facebook, :google, :pinterest, :twitter]
     KEYS = {
       u: :url,
       url: :u,
