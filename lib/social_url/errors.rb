@@ -3,7 +3,7 @@
 module SocialUrl
   class NotImplementedError < StandardError
   end
-  
+
   class UnsupportedNetworkError < StandardError
   end
 end
