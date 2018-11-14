@@ -22,7 +22,7 @@ module SocialUrl
     end
 
     def normalize(params)
-      params.reject { |key, value| !value }.map do |key, value|
+      params.map do |key, value|
         if key == :hashtags
           [key, normalize_hashtags(value)]
         elsif value.is_a?(String)

@@ -23,4 +23,18 @@ class SocialUrl::Networks::TwitterTest < Minitest::Test
 
     assert_equal url, SocialUrl::Networks::Twitter.new(params).url
   end
+
+  def test_url_for_bare_message
+    params = SocialUrl.normalize(
+      text: "Hello World",
+      url: "http://example.com",
+      hashtags: ["nature", "sunset", "Multi Word HashTag"]
+    )
+
+    url = ["https://twitter.com/intent/tweet/?text=Hello%20World",
+           "&url=http%3A%2F%2Fexample.com",
+           "&hashtags=nature,sunset,MultiWordHashTag"].join
+
+    assert_equal url, SocialUrl::Networks::Twitter.new(params).url
+  end
 end

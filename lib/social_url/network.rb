@@ -10,7 +10,7 @@ module SocialUrl
     end
 
     def params
-      whitelisted_params.map do |key, value|
+      whitelisted_params.reject { |key, value| !@original_params[key] }.map do |key, value|
         value.to_s << "=" << @original_params[key]
       end.join("&")
     end
