@@ -21,22 +21,16 @@ module SocialUrl
       NETWORKS
     end
 
-    def normalize(options)
-      opts = {}
-
-      options.each do |key, value|
-        next unless value
-
+    def normalize(params)
+      params.reject { |key, value| !value }.map do |key, value|
         if key == :hashtags
-          opts[key] = normalize_hashtags(value)
+          [key, normalize_hashtags(value)]
         elsif value.is_a?(String)
-          opts[key] = normalize_string(value)
+          [key, normalize_string(value)]
         elsif value.is_a?(Array)
-          opts[key] = normalize_array(value)
+          [key, normalize_array(value)]
         end
-      end
-
-      opts
+      end.to_h
     end
 
     def normalize_hashtags(array)
