@@ -5,12 +5,12 @@ module SocialUrl
   end
 
   class Network
-    def initialize(options)
-      @params = normalized_params(options)
+    def initialize(params)
+      @params = normalized_params(params)
     end
 
-    def params
-      raise SocialUrl::NotImplementedError, "#{self.class.name} should implement #params"
+    def whitelisted_params
+      raise SocialUrl::NotImplementedError, "#{self.class.name} should implement #whitelisted_params"
     end
 
     def url
@@ -18,9 +18,9 @@ module SocialUrl
     end
 
     private
-      def normalized_params(options)
-        params.map do |key, value|
-          value.to_s << "=" << options[key]
+      def normalized_params(params)
+        whitelisted_params.map do |key, value|
+          value.to_s << "=" << params[key]
         end.join("&")
       end
   end

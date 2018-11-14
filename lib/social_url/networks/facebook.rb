@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class SocialUrl::Networks::Facebook < SocialUrl::Network
-  def params
+  def whitelisted_params
     {
       url: :u
     }

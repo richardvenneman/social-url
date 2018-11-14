@@ -3,16 +3,6 @@
 require "test_helper"
 
 class SocialUrlTest < Minitest::Test
-  def setup
-    @options = {
-      text: "Hello World",
-      url: "http://example.com/",
-      hashtags: %w(nature sunset),
-      via: "twitterdev",
-      related: ["twitter:Twitter News", "twitterapi:Twitter API News"]
-    }
-  end
-
   def test_exposes_available_networks
     assert_kind_of Array, SocialUrl.networks
     assert_includes SocialUrl.networks, :twitter

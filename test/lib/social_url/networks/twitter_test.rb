@@ -4,7 +4,7 @@ require "test_helper"
 
 class SocialUrl::Networks::TwitterTest < Minitest::Test
   def setup
-    @options = {
+    @params = {
       text: "Hello World",
       url: "http://example.com",
       hashtags: ["nature", "sunset", "Multi Word HashTag"],
@@ -14,13 +14,13 @@ class SocialUrl::Networks::TwitterTest < Minitest::Test
   end
 
   def test_url
-    opts = SocialUrl.normalize(@options)
+    params = SocialUrl.normalize(@params)
     url = ["https://twitter.com/intent/tweet/?text=Hello%20World",
            "&url=http%3A%2F%2Fexample.com",
            "&hashtags=nature,sunset,MultiWordHashTag",
            "&via=twitterdev",
            "&related=twitter%3ATwitter%20News,twitterapi%3ATwitter%20API%20News"].join
 
-    assert_equal url, SocialUrl::Networks::Twitter.new(opts).url
+    assert_equal url, SocialUrl::Networks::Twitter.new(params).url
   end
 end

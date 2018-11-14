@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class SocialUrl::Networks::Twitter < SocialUrl::Network
-  def params
+  def whitelisted_params
     {
       text: :text,
       url: :url,
