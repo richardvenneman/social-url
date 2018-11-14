@@ -8,6 +8,6 @@ class SocialUrl::Networks::Google < SocialUrl::Network
   end
 
   def url
-    "https://plus.google.com/share?#{@params}"
+    "https://plus.google.com/share?#{params}"
   end
 end

@@ -12,6 +12,6 @@ class SocialUrl::Networks::Twitter < SocialUrl::Network
   end
 
   def url
-    "https://twitter.com/intent/tweet/?#{@params}"
+    "https://twitter.com/intent/tweet/?#{params}"
   end
 end

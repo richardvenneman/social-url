@@ -8,6 +8,6 @@ class SocialUrl::Networks::Facebook < SocialUrl::Network
   end
 
   def url
-    "https://www.facebook.com/sharer/sharer.php?#{@params}"
+    "https://www.facebook.com/sharer/sharer.php?#{params}"
   end
 end

@@ -10,6 +10,6 @@ class SocialUrl::Networks::Pinterest < SocialUrl::Network
   end
 
   def url
-    "https://www.pinterest.com/pin/create/button/?#{@params}"
+    "https://www.pinterest.com/pin/create/button/?#{params}"
   end
 end
