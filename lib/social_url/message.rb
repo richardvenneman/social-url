@@ -11,9 +11,9 @@ class SocialUrl::Message
     network = /(.+)_url/.match(method)
     return unless network
 
-    networks = SocialUrl.networks.join(",")
+    networks = SocialUrl.networks.join(", ")
     raise SocialUrl::UnsupportedNetworkError,
-         "Unsupported network '#{network[1]}'. Choose from: #{networks}."
+         "Unsupported network: '#{network[1]}'. Available networks: #{networks}."
   end
 
   private
