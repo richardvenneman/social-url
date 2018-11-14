@@ -2,19 +2,15 @@
 
 require "test_helper"
 
-module SocialUrl
-  module Networks
-    class FacebookTest < Minitest::Test
-      def setup
-        @options = { url: "http://example.com" }
-      end
+class SocialUrl::Networks::FacebookTest < Minitest::Test
+  def setup
+    @options = { url: "http://example.com" }
+  end
 
-      def test_url
-        opts = SocialUrl.normalize(@options)
-        url = "https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fexample.com"
+  def test_url
+    opts = SocialUrl.normalize(@options)
+    url = "https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fexample.com"
 
-        assert_equal url, Facebook.new(opts).url
-      end
-    end
+    assert_equal url, SocialUrl::Networks::Facebook.new(opts).url
   end
 end

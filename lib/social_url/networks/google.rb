@@ -1,15 +1,11 @@
 # frozen_string_literal: true
 
-module SocialUrl
-  module Networks
-    class Google < Network
-      def params
-        [:url]
-      end
+class SocialUrl::Networks::Google < SocialUrl::Network
+  def params
+    [:url]
+  end
 
-      def url
-        "https://plus.google.com/share?#{@params}"
-      end
-    end
+  def url
+    "https://plus.google.com/share?#{@params}"
   end
 end
