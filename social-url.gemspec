@@ -5,6 +5,7 @@ require "./lib/social_url/version"
 Gem::Specification.new do |s|
   s.name         = "social-url"
   s.version      = SocialUrl::VERSION
+  s.license      = "MIT"
   s.authors      = ["Richard Venneman"]
   s.email        = "richardvenneman@me.com"
   s.homepage     = "https://github.com/richardvenneman/social-url"
@@ -13,9 +14,8 @@ Gem::Specification.new do |s|
                    messages. Supports multiple social platforms trough a plugin
                    architecture.'
 
-  s.license      = "MIT"
-  s.require_path = "lib"
   s.files        = `git ls-files`.split("\n")
+  s.require_path = "lib"
   s.test_files   = Dir["test/**/*"]
 
   s.add_development_dependency "rake", "~> 12"
