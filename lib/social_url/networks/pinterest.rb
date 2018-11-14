@@ -2,7 +2,11 @@
 
 class SocialUrl::Networks::Pinterest < SocialUrl::Network
   def params
-    [:url, :media, :description]
+    {
+      url: :url,
+      text: :description,
+      media: :media
+    }
   end
 
   def url

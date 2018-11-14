@@ -2,7 +2,13 @@
 
 class SocialUrl::Networks::Twitter < SocialUrl::Network
   def params
-    [:text, :url, :hashtags, :via, :related]
+    {
+      text: :text,
+      url: :url,
+      hashtags: :hashtags,
+      via: :via,
+      related: :related
+    }
   end
 
   def url

@@ -17,13 +17,6 @@ module SocialUrl
   include ERB::Util
 
   class << self
-    KEYS = {
-      u: :url,
-      url: :u,
-      description: :text,
-      text: :description
-    }
-
     def networks
       NETWORKS
     end
@@ -43,16 +36,6 @@ module SocialUrl
         end
       end
 
-      normalize_keys(opts)
-    end
-
-    def normalize_keys(options)
-      opts = options.dup
-
-      options.each do |key, value|
-        opts[KEYS[key]] = opts[key] if KEYS[key]
-      end
-
       opts
     end
 
@@ -70,13 +53,6 @@ module SocialUrl
       array.collect do |value|
         ERB::Util.url_encode(value)
       end.join(",")
-    end
-
-    def filtered_params(options, params)
-      params.collect do |param|
-        next unless options[param]
-        "#{param}=#{options[param]}"
-      end.compact.join("&")
     end
   end
 end

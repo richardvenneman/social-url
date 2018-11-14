@@ -2,7 +2,9 @@
 
 class SocialUrl::Networks::Facebook < SocialUrl::Network
   def params
-    [:u]
+    {
+      url: :u
+    }
   end
 
   def url

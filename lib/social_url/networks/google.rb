@@ -2,7 +2,9 @@
 
 class SocialUrl::Networks::Google < SocialUrl::Network
   def params
-    [:url]
+    {
+      url: :url
+    }
   end
 
   def url

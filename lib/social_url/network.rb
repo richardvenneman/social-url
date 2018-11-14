@@ -6,7 +6,7 @@ module SocialUrl
 
   class Network
     def initialize(options)
-      @params = SocialUrl.filtered_params(options, params)
+      @params = normalized_params(options)
     end
 
     def params
@@ -16,5 +16,12 @@ module SocialUrl
     def url
       raise SocialUrl::NotImplementedError, "#{self.class.name} should implement #url"
     end
+
+    private
+      def normalized_params(options)
+        params.map do |key, value|
+          value.to_s << "=" << options[key]
+        end.join("&")
+      end
   end
 end

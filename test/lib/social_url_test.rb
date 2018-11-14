@@ -11,16 +11,6 @@ class SocialUrlTest < Minitest::Test
       via: "twitterdev",
       related: ["twitter:Twitter News", "twitterapi:Twitter API News"]
     }
-
-    @normalized_options = {
-      text: "Hello%20World",
-      description: "Hello%20World",
-      u: "http%3A%2F%2Fexample.com%2F",
-      url: "http%3A%2F%2Fexample.com%2F",
-      hashtags: "nature,sunset",
-      via: "twitterdev",
-      related: "twitter%3ATwitter%20News,twitterapi%3ATwitter%20API%20News"
-    }
   end
 
   def test_exposes_available_networks
@@ -49,16 +39,5 @@ class SocialUrlTest < Minitest::Test
     text = "MultiWordHashTag,nature"
 
     assert_equal text, SocialUrl.normalize_hashtags(array)
-  end
-
-  def test_normalization
-    assert_equal @normalized_options, SocialUrl.normalize(@options)
-  end
-
-  def test_filtered_params
-    filtered_params = "text=Hello%20World&url=http%3A%2F%2Fexample.com%2F"
-    params = [:text, :url, :derp]
-
-    assert_equal filtered_params, SocialUrl.filtered_params(@normalized_options, params)
   end
 end
