@@ -5,6 +5,7 @@ require "erb"
 require "social_url/errors"
 require "social_url/version"
 require "social_url/message"
+require "social_url/network"
 
 NETWORKS = []
 Dir[File.join(__dir__, "social_url", "networks", "*.rb")].each do |file|

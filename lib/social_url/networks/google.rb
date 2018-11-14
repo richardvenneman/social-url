@@ -2,11 +2,9 @@
 
 module SocialUrl
   module Networks
-    class Google
-      PARAMS = [:url]
-
-      def initialize(options)
-        @params = SocialUrl.filtered_params(options, PARAMS)
+    class Google < Network
+      def params
+        [:url]
       end
 
       def url

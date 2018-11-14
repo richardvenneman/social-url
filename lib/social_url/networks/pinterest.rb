@@ -2,11 +2,9 @@
 
 module SocialUrl
   module Networks
-    class Pinterest
-      PARAMS = [:url, :media, :description]
-
-      def initialize(options)
-        @params = SocialUrl.filtered_params(options, PARAMS)
+    class Pinterest < Network
+      def params
+        [:url, :media, :description]
       end
 
       def url

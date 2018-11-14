@@ -2,11 +2,9 @@
 
 module SocialUrl
   module Networks
-    class Twitter
-      PARAMS = [:text, :url, :hashtags, :via, :related]
-
-      def initialize(options)
-        @params = SocialUrl.filtered_params(options, PARAMS)
+    class Twitter < Network
+      def params
+        [:text, :url, :hashtags, :via, :related]
       end
 
       def url

@@ -2,11 +2,9 @@
 
 module SocialUrl
   module Networks
-    class Facebook
-      PARAMS = [:u]
-
-      def initialize(options)
-        @params = SocialUrl.filtered_params(options, PARAMS)
+    class Facebook < Network
+      def params
+        [:u]
       end
 
       def url
