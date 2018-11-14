@@ -1,10 +1,12 @@
-require 'simplecov'
+# frozen_string_literal: true
+
+require "simplecov"
 SimpleCov.start do
-  add_group 'Libraries', 'lib'
+  add_group "Libraries", "lib"
 end
 
 # Source files
-require './lib/social_url'
+require "./lib/social_url"
 
 # Framework
-require 'minitest/autorun'
+require "minitest/autorun"

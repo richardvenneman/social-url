@@ -1,1 +1,0 @@
-require 'social_url'

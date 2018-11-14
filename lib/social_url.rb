@@ -1,13 +1,15 @@
-require 'erb'
+# frozen_string_literal: true
 
-require 'social_url/errors'
-require 'social_url/version'
+require "erb"
 
-require 'social_url/message'
-require 'social_url/facebook'
-require 'social_url/google'
-require 'social_url/pinterest'
-require 'social_url/twitter'
+require "social_url/errors"
+require "social_url/version"
+
+require "social_url/message"
+require "social_url/facebook"
+require "social_url/google"
+require "social_url/pinterest"
+require "social_url/twitter"
 
 module SocialUrl
   include ERB::Util
@@ -55,8 +57,8 @@ module SocialUrl
 
     def normalize_hashtags(array)
       array.collect do |value|
-        value.delete(' ')
-      end.join(',')
+        value.delete(" ")
+      end.join(",")
     end
 
     def normalize_string(string)
@@ -66,14 +68,14 @@ module SocialUrl
     def normalize_array(array)
       array.collect do |value|
         ERB::Util.url_encode(value)
-      end.join(',')
+      end.join(",")
     end
 
     def filtered_params(options, params)
       params.collect do |param|
         next unless options[param]
         "#{param}=#{options[param]}"
-      end.compact.join('&')
+      end.compact.join("&")
     end
   end
 end

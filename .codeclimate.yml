@@ -1,11 +1,11 @@
----
-engines:
+version: "2"
+plugins:
+  fixme:
+    enabled: true
+  reek:
+    enabled: true
   rubocop:
     enabled: true
-  bundler-audit:
-    enabled: true
-ratings:
-  paths:
-  - lib/**/*.rb
-exclude_paths:
+    channel: rubocop-0-60
+exclude_patterns:
 - test/**/*
